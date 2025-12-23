@@ -1,0 +1,127 @@
+---
+title: Welcome to poidplume66
+description: Discover poidplume66, a powerful documentation platform designed to help you organize and manage all your project documentation effortlessly.
+---
+
+## Overview
+
+poidplume66 empowers you to create, organize, and maintain comprehensive documentation for your projects. You get a centralized space to collaborate with your team, version control your docs, and deliver polished, searchable content. Whether you manage APIs, user guides, or internal wikis, poidplume66 streamlines the process.
+
+<Callout kind="info">
+  poidplume66 supports Markdown, MDX, and integrates with Git for seamless workflows.
+</Callout>
+
+## Key Features
+
+Discover the core capabilities that make poidplume66 stand out.
+
+<Columns cols={3}>
+  <Card title="Version Control" icon="git-branch" href="/docs/version-control">
+    Track changes, revert updates, and collaborate without conflicts using built-in Git integration.
+  </Card>
+  <Card title="Advanced Search" icon="search" href="/docs/search">
+    Find any document or section instantly with full-text search across your entire knowledge base.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="/docs/collaboration">
+    Invite team members, assign roles, and review changes in real-time.
+  </Card>
+</Columns>
+
+## Benefits for Teams and Projects
+
+poidplume66 delivers tangible value for development teams and project managers.
+
+<Tabs>
+  <Tab title="Developers" icon="code">
+    Focus on code, not doc maintenance. Embed live code examples and API references directly.
+  </Tab>
+  <Tab title="Product Managers" icon="trending-up">
+    Centralize product requirements, roadmaps, and user stories for better alignment.
+  </Tab>
+  <Tab title="Support Teams" icon="headphones">
+    Build self-service knowledge bases to reduce ticket volume by up to 40%.
+  </Tab>
+</Tabs>
+
+These benefits scale with your project size, ensuring documentation keeps pace with growth.
+
+## Quick Navigation Guide
+
+Jump to essential sections quickly.
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up your first documentation site in under 5 minutes.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs with API keys and role-based access.
+  </Card>
+  <Card title="Configuration" icon="settings" href="/configuration">
+    Customize themes, navigation, and integrations.
+  </Card>
+  <Card title="Changelog" icon="git-commit" href="/changelog">
+    Stay updated with the latest releases and improvements.
+  </Card>
+</Columns>
+
+## Getting Started
+
+Begin with these simple steps to launch your documentation.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `https://poidplume66.com` with your email.
+  </Step>
+  <Step title="New Project" icon="plus">
+    Click "New Project" and name it, like "My API Docs".
+  </Step>
+  <Step title="Add First Doc" icon="file-plus">
+    Create `introduction.mdx` and start writing.
+
+````mdx
+---
+title: My First Doc
+description: Hello world example.
+---
+
+## Hello poidplume66
+
+Welcome to your documentation!
+````
+
+  </Step>
+  <Step title="Publish" icon="globe">
+    Hit "Publish" to generate your live site at `https://docs.poidplume66.com/my-project`.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Fetch your docs via API
+const response = await fetch('https://api.example.com/docs/my-project', {
+  headers: { Authorization: `Bearer ${YOUR_API_KEY}` }
+});
+const docs = await response.json();
+console.log(docs);
+```
+```python
+# Fetch docs using requests
+import requests
+response = requests.get(
+    'https://api.example.com/docs/my-project',
+    headers={'Authorization': f'Bearer {YOUR_API_KEY}'}
+)
+docs = response.json()
+print(docs)
+```
+</CodeGroup>
+
+## Next Steps
+
+Explore deeper topics to customize poidplume66.
+
+<Callout kind="tip">
+  Check the <a href="/quickstart">Quickstart guide</a> next for hands-on setup.
+</Callout>
+
+With these tools, you build professional documentation that grows with your project. Dive in and transform how your team handles knowledge sharing.

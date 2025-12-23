@@ -1,0 +1,126 @@
+---
+title: Core Features of poidplume66
+description: Explore the essential tools and capabilities that make poidplume66 ideal for documentation management.
+---
+
+## Overview
+
+poidplume66 provides powerful tools to streamline your documentation workflow. You organize content into folders, track changes with version control, collaborate seamlessly with teams, and find information quickly using search and tags. These features ensure your docs stay structured, up-to-date, and accessible.
+
+<Columns cols={3}>
+  <Card title="Folders" icon="folder" href="#document-organization">
+    Organize docs hierarchically for easy navigation.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-control">
+    Track changes and revert when needed.
+  </Card>
+  <Card title="Collaboration" icon="users" href="#collaboration">
+    Share and edit docs with your team.
+  </Card>
+</Columns>
+
+<Columns cols={1}>
+  <Card title="Search & Tags" icon="search" href="#search-tagging">
+    Quickly locate content with powerful search.
+  </Card>
+</Columns>
+
+## Document Organization and Folders
+
+Create a clear structure for your documentation using folders. You nest folders to mirror your project's architecture, making navigation intuitive.
+
+<Steps>
+  <Step title="Create a Folder" icon="folder-plus">
+    In the dashboard, click the `{New Folder}` button and name it `api-reference`.
+  </Step>
+  <Step title="Add Documents" icon="file-plus">
+    Drag MDX files into the folder or use the upload interface.
+  </Step>
+  <Step title="Rearrange" icon="move">
+    Drag folders to reorder or nest them under parent folders.
+  </Step>
+</Steps>
+
+```javascript
+// Example API call to create a folder
+const response = await fetch('https://api.example.com/folders', {
+  method: 'POST',
+  headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+  body: JSON.stringify({ name: 'api-reference', parentId: null })
+});
+```
+
+## Version Control for Docs
+
+poidplume66 integrates version control so you maintain history without external tools. Commit changes, view diffs, and rollback versions effortlessly.
+
+<Tabs>
+  <Tab title="Web UI" icon="monitor">
+    Select a doc, click `{History}`, and choose a version to restore.
+  </Tab>
+  <Tab title="API" icon="code">
+    <CodeGroup tabs="JavaScript,Python">
+      ```javascript
+      await fetch(`https://api.example.com/docs/my-doc/versions`, {
+        headers: { 'Authorization': 'Bearer YOUR_API_KEY' }
+      });
+      ```
+      ```python
+      import requests
+      response = requests.get('https://api.example.com/docs/my-doc/versions',
+                              headers={'Authorization': 'Bearer YOUR_API_KEY'})
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Enable auto-commits in settings for hands-free version tracking.
+</Callout>
+
+## Collaboration and Sharing Options
+
+Invite team members and share docs securely. Generate public links, embed previews, or restrict access by role.
+
+<ParamField path="userId" param-type="string" required="true">
+  ID of the user to invite.
+</ParamField>
+
+<ParamField query="permission" param-type="string" required="false">
+  Set to `read`, `write`, or `admin`.
+</ParamField>
+
+```javascript
+// Share a doc via API
+await fetch(`https://api.example.com/docs/my-doc/share?userId=123&permission=write`, {
+  method: 'POST',
+  headers: { 'Authorization': 'Bearer YOUR_API_KEY' }
+});
+```
+
+## Search and Tagging Functionality
+
+Tag docs for categorization and use full-text search across your space. Combine tags like `api` and `v2` for precise results.
+
+<ExpandableGroup>
+  <Expandable title="Advanced Search Syntax" default-open="true">
+    Use quotes for phrases: `"error handling"`.
+
+    Boolean operators: `tag:api AND status:draft`.
+  </Expandable>
+  <Expandable title="Tag Management">
+    Create tags via UI or API. Limits: `<100` tags per doc.
+  </Expandable>
+</ExpandableGroup>
+
+| Feature | Description | Example |
+|---------|-------------|---------|
+| Tags | Custom labels | `api`, `beta` |
+| Search | Full-text + filters | `query=api-v2` |
+| Filters | By folder/date | `folder:reference` |
+
+<Callout kind="info">
+  Search indexes updates in `<5` seconds for instant results.
+</Callout>
+
+These core features empower you to manage documentation efficiently. Start by organizing your first folder today.
